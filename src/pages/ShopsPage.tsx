@@ -56,7 +56,7 @@ export default function ShopsPage() {
       });
   }, []);
 
-  // Скидання сторінки при зміні магазину
+  
   useEffect(() => {
     if (selectedShopId !== "all") {
       setCurrentPage(prev => ({ ...prev, [selectedShopId]: 1 }));
@@ -70,7 +70,7 @@ export default function ShopsPage() {
     id: p._id || p.id || p.name,
     name: p.name,
     price: p.price,
-    image: p.image,
+    image: p.image.startsWith("http") ? p.image : `${API_URL}${p.image}`,
     dateAdded: p.dateAdded || new Date().toISOString(),
   });
 
