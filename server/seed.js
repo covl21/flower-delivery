@@ -6,10 +6,7 @@ require("dotenv").config();
 const MONGO_URI =
   process.env.MONGO_URI || "mongodb://127.0.0.1:27017/flower-delivery";
 
-
-const API_BASE_URL = "https://flower-delivery-warp.onrender.com";
-
-
+// допоміжна функція для генерації дат
 function daysAgo(num) {
   const d = new Date();
   d.setDate(d.getDate() - num);
@@ -77,20 +74,15 @@ const shops = [
 ];
 
 async function seed() {
-  try {
-    await mongoose.connect(MONGO_URI);
-    console.log("Connected to MongoDB for seeding");
-
-    await Shop.deleteMany({});
-    await Shop.insertMany(shops);
-
-    console.log("Seed completed successfully");
-    process.exit(0);
-  } catch (err) {
-    console.error(err);
-    process.exit(1);
-  }
+  await mongoose.connect(MONGO_URI);
+  console.log("Connected to MongoDB for seeding");
+  await Shop.deleteMany({});
+  await Shop.insertMany(shops);
+  console.log("Seed completed");
+  process.exit(0);
 }
 
-seed();
-
+seed().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

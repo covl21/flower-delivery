@@ -2,6 +2,7 @@ import { createContext, useState, useEffect } from "react";
 import type { ReactNode } from "react";
 import type { Product } from "../types";
 
+
 interface CartItem {
   product: Product;
   quantity: number;
