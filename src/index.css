@@ -1,4 +1,4 @@
-/* Скидання білих полів та базові налаштування */
+
 html, body {
   margin: 0;
   padding: 0;
@@ -8,7 +8,7 @@ html, body {
   font-family: Arial, sans-serif;
 }
 
-/* Шапка */
+
 .header {
   width: 100%;
   height: 80px;
@@ -73,7 +73,7 @@ html, body {
 /* Головний контейнер під шапкою */
 .main-container {
   display: flex;
-  height: calc(100% - 80px); /* висота вікна мінус шапка */
+  height: calc(100% - 80px);
   color: #fff;
 }
 
@@ -117,7 +117,7 @@ html, body {
   padding: 20px;
   overflow-y: auto; 
   box-sizing: border-box;
-  max-width: 100%; /* щоб картки не виходили за межі */
+  max-width: 100%; 
 }
 
 
@@ -137,7 +137,7 @@ html, body {
   text-transform: uppercase;
 }
 
-/* Кнопки-навігації (стрілки) */
+/* Кнопки-навігації */
 .nav-btn {
   background-color: #fff;
   color: #a3623b;
@@ -163,7 +163,7 @@ html, body {
 
 
 
-/* Слайдер */
+
 .products-slider {
   display: flex;
   align-items: center;
@@ -214,7 +214,7 @@ html, body {
   background-color: #218838;
 }
 
-/* Hover-ефект картки */
+
 .product-card:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
@@ -222,16 +222,16 @@ html, body {
 
 .products-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 картки в ряд */
-  gap: 30px; /* відстань між картками */
-  max-width: 100%; /* обмежує ширину контейнера */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 30px; 
+  max-width: 100%; 
   box-sizing: border-box;
 }
 
 
 .products-list .product-card {
-  width: 100%; /* картка під розмір клітинки */
-  height: 300px; /* висота картки */
+  width: 100%; 
+  height: 300px; 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -239,8 +239,8 @@ html, body {
 }
 
 .products-list .product-card img {
-  width: 100%;   /* картинка під ширину картки */
-  height: 180px; /* висота картинки */
+  width: 100%;  
+  height: 180px; 
   object-fit: cover;
   border-radius: 10px;
 }
@@ -437,12 +437,12 @@ html, body {
 
 /* Ліва колонка - список товарів */
 .cart-items-column {
-  flex: 1 1 550px; /* займає більшу частину */
+  flex: 1 1 550px; 
 }
 
 /* Права колонка - форма */
 .order-form-column {
-  flex: 1 1 350px; /* форма менша */
+  flex: 1 1 350px; 
 }
 
 .order-form {
@@ -479,7 +479,7 @@ html, body {
 
 .sort-container {
   display: flex;
-  justify-content: flex-end; /* праворуч */
+  justify-content: flex-end; 
   margin-bottom: 20px;
 }
 

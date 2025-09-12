@@ -12,10 +12,14 @@ const orderRoutes = require("./routes/orders");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+app.use(cors({
+  origin: "https://flower-delivery-kl24.vercel.app", 
+  methods: ["GET","POST","PUT","DELETE","OPTIONS"],
+  credentials: true
+}));
+
 app.use(bodyParser.json());
 
-// Статичні картинки з папки public/images доступні за /images/...
 app.use("/images", express.static(path.join(__dirname, "public", "images")));
 
 // API
