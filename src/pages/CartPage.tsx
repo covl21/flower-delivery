@@ -42,7 +42,7 @@ const handleSubmit = async (e: React.FormEvent) => {
       name: item.product.name,
       price: item.product.price,
       quantity: item.quantity,
-      image: item.product.image // <-- додаємо фото
+      image: item.product.image 
     })),
     totalPrice,
     date: now.toISOString(), // передаємо на сервер дату у форматі UTC
