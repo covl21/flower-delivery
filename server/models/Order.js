@@ -6,7 +6,7 @@ const CartItemSchema = new mongoose.Schema({
   name: String,
   price: Number,
   quantity: Number,
-  image: String // додали поле image
+  image: String
 });
 
 const OrderSchema = new mongoose.Schema({
