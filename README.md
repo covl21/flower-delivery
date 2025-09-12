@@ -19,10 +19,10 @@ This is a Flower Delivery application built with React (Vite) and Node.js. Users
 - Backend: Node.js, Express
 - Database: MongoDB
 
+##Public URL
+- https://flower-delivery-kl24.vercel.app/
 ## Installation
 1. Clone the repository:
 ```bash
 git clone https://github.com/username/flower-delivery.git
 
-##Public URL
-https://flower-delivery-kl24.vercel.app/
