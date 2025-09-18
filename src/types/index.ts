@@ -3,6 +3,8 @@ export interface Product {
     name: string;
     price: number;
     image: string;
+    shopId?: string;                
+    shopLocation?: { lat: number; lng: number }; 
   }
   
   export interface Shop {

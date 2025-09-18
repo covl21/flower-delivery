@@ -21,13 +21,11 @@ export const CartContext = createContext<CartContextType | null>(null);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [cart, setCart] = useState<CartItem[]>(() => {
-    // При першому рендері беремо з localStorage
     const savedCart = localStorage.getItem("cart");
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
   useEffect(() => {
-    // Кожна зміна кошика зберігає його в localStorage
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 

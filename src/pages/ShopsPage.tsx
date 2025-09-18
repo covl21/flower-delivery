@@ -1,4 +1,3 @@
-// src/pages/ShopsPage.tsx
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import type { Product } from "../types";
@@ -20,6 +19,8 @@ type BackendShop = {
   name: string;
   products: BackendProduct[];
 };
+
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 type ProductWithDate = Product & { dateAdded: string };
 type SortOption = "priceAsc" | "priceDesc" | "dateAsc" | "dateDesc";

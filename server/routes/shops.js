@@ -1,4 +1,3 @@
-// server/routes/shops.js
 const express = require("express");
 const Shop = require("../models/Shop");
 const router = express.Router();

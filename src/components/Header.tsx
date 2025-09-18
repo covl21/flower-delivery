@@ -1,4 +1,3 @@
-// src/components/Header.tsx
 import { Link } from "react-router-dom";
 import "./Header.css";
 
@@ -13,6 +12,14 @@ export default function Header() {
         <Link to="/cart" className="header-section">
           <img src="/icons/cart.png" alt="cart" />
           <span>Shoping Cart</span>
+        </Link>
+        <Link to="/order-lookup" className="header-section">
+          <img src="/icons/order.png" alt="cart" />
+          <span>Order Lookup</span>
+        </Link>
+        <Link to="/coupons" className="header-section">
+          <img src="/icons/coupons.png" alt="cart" />
+          <span>Coupons</span>
         </Link>
       </div>
 

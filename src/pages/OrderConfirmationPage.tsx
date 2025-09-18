@@ -14,9 +14,13 @@ export default function OrderConfirmationPage() {
     );
   }
 
-  // Форматування дати
-  const orderDate = new Date(order.createdAt);
+  const orderDate = new Date(order.createdAt || order.date);
   const formattedDate = orderDate.toLocaleString();
+
+  const hasDiscount = order.appliedCoupon && order.appliedCoupon !== "";
+  const discount = order.discount || 0; 
+
+  const originalTotal = order.originalTotalPrice || order.totalPrice;
 
   return (
     <div
@@ -87,11 +91,21 @@ export default function OrderConfirmationPage() {
           ))}
         </div>
 
-        {/* Total */}
+        {/* Total з купоном */}
         <hr style={{ margin: "20px 0", borderColor: "#4a2f1b" }} />
-        <h3 style={{ marginBottom: "20px", textAlign: "right" }}>
-          Total: ${order.totalPrice}
+        <h3 style={{ marginBottom: "10px", textAlign: "right" }}>
+          Total: ${order.totalPrice.toFixed(2)}{" "}
+          {hasDiscount && (
+            <span style={{ textDecoration: "line-through", color: "gray", marginLeft: "10px" }}>
+              ${originalTotal.toFixed(2)}
+            </span>
+          )}
         </h3>
+        {hasDiscount && (
+          <p style={{ textAlign: "right", color: "green", fontWeight: "bold" }}>
+            Coupon "{order.appliedCoupon}" applied ({discount}% OFF)
+          </p>
+        )}
 
         {/* Інформація про замовника */}
         <div style={{ textAlign: "left", color: "#000000ff", lineHeight: 0.6 }}>

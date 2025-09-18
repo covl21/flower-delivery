@@ -252,7 +252,7 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 60vh;
+  height: 70vh;
   text-align: center;
   color: #ffffff;
   padding: 40px;
@@ -321,6 +321,10 @@ html, body {
   padding: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cart-items-column h2 {
+    color: white;
 }
 
 .cart-item:hover {
@@ -399,6 +403,10 @@ html, body {
   border-top: 2px solid #eee;
 }
 
+.cart-footer h3 {
+    color: white;
+}
+
 .cart-footer button {
   padding: 10px 20px;
   border-radius: 10px;
@@ -410,7 +418,7 @@ html, body {
 
 .cart-footer .checkout-btn {
   background-color: #007bff;
-  color: #fff;
+  color: #ffffff;
 }
 
 .cart-footer .checkout-btn:hover {
@@ -419,12 +427,12 @@ html, body {
 }
 
 .cart-footer .clear-btn {
-  background-color: #ffc107;
-  color: #333;
+  background-color: #ffe0b2;
+  color: #4a2f1b;
 }
 
 .cart-footer .clear-btn:hover {
-  background-color: #e0a800;
+  background-color: #ffe0b2c5;
   transform: scale(1.05);
 }
 
@@ -443,6 +451,10 @@ html, body {
 /* Права колонка - форма */
 .order-form-column {
   flex: 1 1 350px; 
+}
+
+.order-form-column h2 {
+    color: rgb(255, 255, 255);
 }
 
 .order-form {
