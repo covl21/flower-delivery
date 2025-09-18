@@ -30,15 +30,16 @@ export default function CartPage() {
   const discountedPrice = totalPrice - (totalPrice * discount) / 100;
 
   const shopLocation = cart[0]?.product.shopLocation || { lat: 50.4501, lng: 30.5234 };
+  
+  const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
   const applyCoupon = async () => {
     setCouponError("");
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
       const res = await fetch(`${apiUrl}/api/coupons/${couponCode}`);
       if (!res.ok) {
-        const data = await res.json();
-        throw new Error(data.message);
+        const text = await res.text();
+        throw new Error(text || "Failed to apply coupon");
       }
       const coupon = await res.json();
       setDiscount(coupon.discount);
