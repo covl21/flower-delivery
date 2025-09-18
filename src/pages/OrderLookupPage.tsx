@@ -19,7 +19,8 @@ export default function OrderLookupPage() {
         return;
       }
 
-      const res = await fetch(`http://localhost:5000/api/orders/find?${query}`);
+      const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
+      const res = await fetch(`${apiUrl}/api/orders/find?${query}`);
       if (!res.ok) {
         const data = await res.json();
         throw new Error(data.message);
